@@ -43,6 +43,8 @@
   }
 
   render();
+  cssEditor.setValue(css);
+  htmlEditor.setValue(html);
 
 
   // Returns a function, that, as long as it continues to be invoked, will not
