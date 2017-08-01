@@ -1,5 +1,12 @@
 (function() {
 
+  var baseStyle =
+'#content-wrapper { \n'+
+'  position: absolute;\n' +
+'  width: 100%;\n' +
+'  height: 100%;\n' +
+'}';
+
   var cssEditor = ace.edit('css-content');
   cssEditor.setTheme('ace/theme/monokai');
   cssEditor.getSession().setMode('ace/mode/css');
@@ -29,7 +36,7 @@
   }
 
   function render() {
-    shadowElement.innerHTML = '<style>' + css + '</style>' + html + '</body>';
+    shadowElement.innerHTML = '<style>' + baseStyle + '\n\n' + css + '</style><div id="content-wrapper">' + html + '</div>';
   }
 
 
