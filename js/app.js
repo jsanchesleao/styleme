@@ -5,6 +5,7 @@
 '  position: absolute;\n' +
 '  width: 100%;\n' +
 '  height: 100%;\n' +
+'  background-color: #babaca;\n' +
 '}';
 
   var cssEditor = ace.edit('css-content');
@@ -19,25 +20,29 @@
   var previewElement = document.getElementById('preview');
   var shadowElement = previewElement.createShadowRoot();
   var debounceTime = 1000;
-  var css = '';
-  var html = '';
+  var css = localStorage.getItem('css') || '';
+  var html = localStorage.getItem('html') || '';
 
   cssEditor.getSession().on('change', debounce(updateCss, debounceTime));
   htmlEditor.getSession().on('change', debounce(updateHtml, debounceTime));
 
   function updateCss(e) {
     css = cssEditor.getValue();
+    localStorage.setItem('css', css);
     render();
   }
 
   function updateHtml(e) {
     html = htmlEditor.getValue();
+    localStorage.setItem('html', html);
     render();
   }
 
   function render() {
     shadowElement.innerHTML = '<style>' + baseStyle + '\n\n' + css + '</style><div id="content-wrapper">' + html + '</div>';
   }
+
+  render();
 
 
   // Returns a function, that, as long as it continues to be invoked, will not
