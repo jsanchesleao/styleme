@@ -13,6 +13,7 @@ body {
 }
 
 #css-content, #html-content {
+  font-size: 20px;
   position: absolute;
   top: 0;
   left: 0;
@@ -81,9 +82,4 @@ body {
   .preview-section {
     flex: 1;
   }
-}
-
-
-#html-content {
-  font-size: 20px;
 }
