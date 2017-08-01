@@ -65,6 +65,7 @@ body {
 }
 
 .preview-section {
+  position: relative;
   background-color: white;
 }
 
@@ -80,4 +81,9 @@ body {
   .preview-section {
     flex: 1;
   }
+}
+
+
+.ace_editor {
+  font-size: 20px;
 }
