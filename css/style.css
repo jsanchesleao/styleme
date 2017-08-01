@@ -84,6 +84,6 @@ body {
 }
 
 
-.html-content .ace_editor {
+#html-content .ace_editor {
   font-size: 20px;
 }
